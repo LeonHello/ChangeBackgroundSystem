@@ -34,6 +34,11 @@ class MainLayout extends React.Component {
                 <span>画廊</span>
                 <Link to="/gallery">画廊</Link>
               </Menu.Item>
+              <Menu.Item key="3">
+                <Icon type="apple" />
+                <span>截图测试</span>
+                <Link to="/screenshot">截图</Link>
+              </Menu.Item>
             </Menu>
           </Sider>
           <Layout>

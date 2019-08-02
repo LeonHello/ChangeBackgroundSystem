@@ -44,9 +44,8 @@ var getFiles = {
     }
 };
 
-// /utils/getPictureName
-router.get('/getPictureName', function (req, res, next) {
-    console.log(req.query);
+// /utils/getImgName
+router.get('/getImgName', function (req, res, next) {
     let {category} = req.query;
     //文件夹路径
     var path = process.cwd() + "/source/" + category + "/";
@@ -57,8 +56,8 @@ router.get('/getPictureName', function (req, res, next) {
     res.json({ status: 1, data: imageList });
 });
 
-// /utils/handle
-router.post('/handle', (req, res, next) => {
+// /utils/uploadImg
+router.post('/uploadImg', (req, res, next) => {
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
         console.log(err);

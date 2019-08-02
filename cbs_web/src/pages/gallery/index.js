@@ -11,7 +11,7 @@ class Gallery extends React.Component {
 
     //不可用
     componentDidMount() {
-        fetch(`/api/utils/getPictureName?category=${this.state.category}`)
+        fetch(`/api/utils/getImgName?category=${this.state.category}`)
             .then(response => response.json())
             .then(res => {
                 this.setState({
