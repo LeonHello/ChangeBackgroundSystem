@@ -1,5 +1,6 @@
 import React from 'react';
 import 'whatwg-fetch';
+import style from './index.css';
 // import NaturalGallery from 'natural-gallery-js';
 
 
@@ -58,7 +59,7 @@ class Gallery extends React.Component {
             <div id="gallery">
                 {imageFilesNameList.map((value) => {
                     value = "/api/" + category + "/" + value;
-                    return <img src={value} alt="" />
+                    return <img class={style["img-style"]} src={value} alt="" />
                 })}
             </div>
         );
