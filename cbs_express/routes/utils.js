@@ -47,7 +47,8 @@ var getFiles = {
 
 // /utils/getImgName
 router.get('/getImgName', function (req, res, next) {
-    let { category } = req.query;
+    //category = background || gallery
+    let category = req.query.category ? req.query.category : "background";  
     //文件夹路径
     var path = process.cwd() + "/source/" + category + "/";
     //获取文件夹下的所有图片
@@ -61,7 +62,7 @@ router.get('/getImgName', function (req, res, next) {
 router.post('/uploadImg', (req, res, next) => {
     var form = new formidable.IncomingForm();
     form.encoding = 'utf-8';
-    form.uploadDir = path.join(process.cwd() + "/source/gallery/");
+    form.uploadDir = path.join(process.cwd() + "/source/background/");
     form.keepExtensions = true;//保留后缀
     form.maxFieldsSize = 2 * 1024 * 1024;
     form.parse(req, function (err, fields, files) {

@@ -21,7 +21,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'source')));
-app.use(cors());
+app.use(cors({
+  // credentials: true,
+  // origin: 'http://localhost:8000', // web前端服务器地址
+  origin: '*' // 这样会出错
+}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
